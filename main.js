@@ -8,6 +8,9 @@ let info = document.getElementById("info");
 let recordar = document.getElementById("recordar");
 let eliminar = document.getElementById("eliminar");
 
+let botonJson = document.getElementById("botonJson")
+let array = [];
+
 //Carga todos los datos si existen
 nombre.value = localStorage.getItem("nombre")
 email.value = localStorage.getItem("email")
@@ -33,6 +36,21 @@ eliminar.addEventListener("click",(event) => {
 
 //Modificación del DOM mediante el innterHTML para que te indique que es lo que va a suceder
 recordar.addEventListener("click",() => {
+    
     recordar.checked ? info.innerHTML = `¡Tus datos se guardaran automaticamente!<br>
-                                        <span class="warn">(La contraseña se eliminará al cerrar la página)</span>` : info.innerHTML = "";
+                                        <span class="warn">(La contraseña se eliminará al cerrar la página)</span>` : info.innerText = "";
+})
+
+botonJson.addEventListener("click",(event) => {
+    event.preventDefault();
+    for(let i = 0; i < 3; i++){array.pop()}
+    array.push(nombre.value);
+    array.push(email.value);
+    array.push(contra.value);
+    console.log("Original: "+array);
+    let enJson = JSON.stringify(array);
+    console.log("En JSON.stringify: "+enJson);
+    let sinJson = JSON.parse(enJson);
+    console.log("En JSON.parse: "+sinJson);
+    recordar.checked ? info.innerText = `datos actualizados en la consola` : info.innerText = "";
 })
