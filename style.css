@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 body {
@@ -13,8 +13,14 @@ body {
     background-position: center;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .input-style {
-    width: 210px;
+    width: 350px;
     padding: 4px 16px;
     font-size: .8rem;
     text-align: center;
@@ -34,9 +40,9 @@ body {
     padding: 0px 32px;
 }
 #contenedorPrincipal {
-    width: 500px;
+    width: 50%;
     height: auto;
-    margin: 64px auto;
+    margin: 128px auto;
     padding: 32px 16px;
 
     display: flex;
@@ -44,7 +50,15 @@ body {
     justify-content: center;
 
     background-color: rgba(0,0,0,.4);
+    border-radius: 16px;
     color: white;
+    box-shadow: 0px 0px 16px 16px rgba(0,0,0,.2);
+
+    transition: all .5s ease;
+}
+
+#recordar {
+    transform: scale(2);
 }
 
 .logo {
@@ -94,4 +108,20 @@ li a {
 li a:hover{
     background-color: white;
     color: black;
+}
+
+#info {
+    padding: 16px 8px 0px 8px;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(131, 212, 131);
+    font-style: italic;
+}
+.warn{
+    color:rgb(217, 217, 217);
+    font-size: 0.8rem;
+    background-color: rgba(0,0,0,0.2);
+    padding: 4px;
+    margin: 4px 0px;
+    border-radius: 4px;
 }
